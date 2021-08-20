@@ -1,0 +1,62 @@
+	Paleta de cores
+        
+		***	COLORS LIGHT	***                
+		Branco: #F9F9F9;
+
+		Cinza claro: #CFCFCF;
+
+                Cor de pele clara: #E0C0B0;
+
+                Marrom claro: #BF8F7F;
+                
+                Laranja claro: #EFBF8F;
+
+                Amarelo claro: #FFFF9F;
+
+                Vermelho claro: #FF9FAF
+
+                Roxo claro: #EFAFFF;
+                
+                Rosa claro: #FFAFCF;
+
+                Azul claro: #AFDFFF;
+
+                Verde claro: #AFEFAF;
+                
+                
+		***	COLORS DARK	***
+                Preto: #191919;
+
+                Cinza escuro: #505050;
+
+                Cor de pele escura: #604040;
+                 
+                Marrom escuro: #403020;
+                 
+                Laranja escuro: #903010;
+
+                Amarelo escuro: #908000;
+                
+                Vermelho escuro: #501010; 
+
+                Roxo escuro: #600070;
+
+                Rosa escuro: #904060; 
+
+                Azul escuro: #003060;
+
+                Verde escuro: #004000; 
+
+		***	COPYRIGHT	***
+                &copy;
+
+		***	FONT-FAMILY	***
+		H1: 
+		H2:
+		H3:
+		H4: 'Edwardian Script ITC';
+		H5: 'Courier New', Courier, monospace;	     
+		H6:
+		H7:
+
+		p: 'Courier New', Courier, monospace;
