@@ -1,0 +1,112 @@
+/* Aula 1 - Primeiros passos */
+
+/// VARIÁVEIS CSS 
+
+/***     COLORS DEFAULT  ***/
+$light-dark: #A0A0A0;
+$gray: #7f7f7f;
+$skin-color: #b09080;
+$brown: #7f5f4f;
+$orange: #c07050;
+$yellow: #cfbf4f;
+$red: #d03040;
+$purple: #BF6FCF;
+$pink: #cF7F9F;
+$blue: #3F7FAF;
+$green: #5F9F5F;
+
+/***	COLORS LIGHT	***/                
+$light: #F9F9F9;
+$light-gray: #CFCFCF;
+$light-skin-color: #E0C0B0;
+$light-brown: #BF8F7F;
+$light-orange: #EFBF8F;
+$light-yellow: #FFFF9F;
+$light-red: #FF9FAF;
+$light-purple: #EFAFFF;
+$light-pink: #FFAFCF;
+$light-blue: #AFDFFF;
+$light-green: #AFEFAF;
+
+/***	COLORS DARK	***/
+$dark: #191919;
+$dark-gray: #505050;
+$dark-skin-color: #604040;
+$dark-brown: #403020;
+$dark-orange: #903010;
+$dark-yellow: #807020;
+$dark-red: #501010; 
+$dark-purple: #600070;
+$dark-pink: #904060; 
+$dark-blue: #003060;
+$dark-green: #004000;
+
+.header {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header__logo {
+    text-align: center;
+}
+
+.header__logo .header__img {
+    max-width: 350px;
+}
+
+.header__menu .menu__list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 20px 0;
+}
+
+.header__menu .menu__list .menu__links {
+    position: relative;
+}
+
+.header__menu .menu__list .menu__links:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -3px;
+    margin: auto;
+    height: 15px;
+    width: 1px;
+    background: $light-gray;
+}
+
+.header__menu .menu__list .menu__links .menu__link {
+    padding: 0 25px;
+    color: $dark-blue;
+}
+
+.header__menu .menu__list .menu__links .menu__link:hover {
+    color: $blue;
+}
+
+/* Este trecho de estilo refere-se ao rodapé */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Edwardian Script ITC';
+    // Esse trecho de estilo posiciona o rodapé na parte inferior da tela
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer .footer__logo {
+    max-width: 100px;
+}
+
+.footer .footer__txt {
+    margin: auto;
+    font-size: 14px;
+}
+
