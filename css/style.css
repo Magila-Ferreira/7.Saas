@@ -6,16 +6,13 @@
 .header {
   font-family: "Courier New", Courier, monospace;
 }
-
 .header__logo {
   text-align: center;
 }
-
-.header__logo .header__img {
+.header__img {
   max-width: 350px;
 }
-
-.header__menu .menu__list {
+.header .menu__list {
   display: flex;
   justify-content: center;
   border-top: 1px solid #CFCFCF;
@@ -25,12 +22,10 @@
   width: 80%;
   padding: 20px 0;
 }
-
-.header__menu .menu__list .menu__links {
+.header .menu__links {
   position: relative;
 }
-
-.header__menu .menu__list .menu__links:not(:last-child):after {
+.header .menu__links:not(:last-child):after {
   content: "";
   position: absolute;
   top: 0;
@@ -41,13 +36,11 @@
   width: 1px;
   background: #CFCFCF;
 }
-
-.header__menu .menu__list .menu__links .menu__link {
+.header .menu__link {
   padding: 0 25px;
   color: #003060;
 }
-
-.header__menu .menu__list .menu__links .menu__link:hover {
+.header .menu__link:hover {
   color: #3F7FAF;
 }
 
@@ -56,17 +49,15 @@
   text-align: center;
   padding: 20px 0;
   font-family: "Edwardian Script ITC";
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
-
-.footer .footer__logo {
+.footer__logo {
   max-width: 100px;
 }
-
-.footer .footer__txt {
+.footer__txt {
   margin: auto;
   font-size: 14px;
 }
