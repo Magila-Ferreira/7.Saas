@@ -41,6 +41,8 @@ $dark-pink: #904060;
 $dark-blue: #003060;
 $dark-green: #004000;
 
+/// WIDTH:
+$img-width: 45%;
 
 /// Aula 2 - Nesting and Parent Selector &
 .header {
@@ -85,9 +87,13 @@ $dark-green: #004000;
         &__link {
             padding: 0 25px;
             color: $dark-blue;
+            text-decoration-color: $blue;
+            text-decoration-thickness: 3px;
+            font-weight: bolder;
 
             &:hover {
                 color: $blue;
+                text-decoration-color: $light-blue;
             }
         }
     }
@@ -232,7 +238,83 @@ $dark-green: #004000;
     }
 }
 
+/// Aula 2 - Nesting and Parent Selector &
+.about {
+    width: 80%;
+    margin: 0 auto 40px;
+    font-family: 'Courier New', Courier, monospace;
 
+    &__title {
+        background: $light-gray;
+        text-align: center;
+        padding: 20px;
+    }
 
+    &__h1 {
+        font-size: 22px;
+        color: $dark-gray;
+        letter-spacing: 1px;
+        margin: 5px 0 10px 0;
+    }
 
+    .breadcrumb {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
 
+        &__link {
+            font-size: 16px;
+            text-decoration: none;
+            color: $dark-blue;
+
+            &:hover {
+                color: $blue;
+                text-decoration: underline;
+                text-decoration-color: $blue;
+                text-decoration-thickness: 3px;
+            }
+        }
+
+        &__img {
+            width: 10px;
+            margin: 8px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        font-weight: 100;
+        color: $dark-gray;
+        width: 70%;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    &__split {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__img2 {
+        width: $img-width;
+    }
+
+    &__txt {
+        
+        /// Aula 2 - Interpolação:
+        width: calc(100% - #{$img-width});
+    }
+
+    &__p {
+        font-size: 14px;
+        padding: 20px;
+    }
+}
