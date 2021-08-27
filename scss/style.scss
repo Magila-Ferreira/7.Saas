@@ -44,6 +44,44 @@ $dark-green: #004000;
 /// WIDTH:
 $img-width: 45%;
 
+/// PLACEHOLDER SELECTOR:
+%no-decoration { text-decoration: none; }
+%u-decoration { text-decoration: underline; }
+
+/// Aula 3 - Mixin
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+};
+
+@mixin flx($property, $jty-cnt) {
+    display: flex;
+    #{$property}: $jty-cnt;
+}
+
+/// Aula 3 - Media queries and Mixins
+@mixin for-phone-only {
+    @media (max-width: 767.98px) { @content; }
+};
+
+@mixin for-tablet-only {
+    @media (min-width: 768px) and (max-width: 1199.98px) { @content; } 
+};
+
+@mixin for-desktop-only {
+    @media (min-width: 1200px) { @content; }
+};
+
+/// Aula 3 - Function 
+@function calculateRem($size) {
+    @return $size / 16px * 1rem;
+}
+
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}
+
 /// Aula 2 - Nesting and Parent Selector &
 .header {
     font-family: 'Courier New', Courier, monospace;
@@ -64,12 +102,28 @@ $img-width: 45%;
             border-bottom: 1px solid $light-gray;
             margin-left: auto;
             margin-right: auto;
-            width: 80%;
-            padding: 20px 0;
+            @include for-phone-only {
+                width: 90%;
+                padding: 15px 0;
+                flex-wrap: wrap;
+            }
+            @include for-tablet-only {
+                padding: 20px 0;
+                width: 100%;
+                display: inline-flex;
+                
+            }
+            @include for-desktop-only {
+                width: 80%;
+                padding: 20px 0;
+            }
         }
 
         &__links {
             position: relative;
+            @include for-phone-only {
+                padding: 5px 0;
+            }
 
             &:not(:last-child):after {
                 content: "";
@@ -116,7 +170,7 @@ $img-width: 45%;
 
     &__txt {
         margin: auto;
-        font-size: 14px;
+        @include fontSize(14px);
     }
 }
 
@@ -127,6 +181,9 @@ $img-width: 45%;
     font-family: 'Courier New', Courier, monospace;
 
     &__content {
+        @include for-phone-only {
+            width: 100%;
+        }
         width: 70%;
         padding: 40px 8px;
     }
@@ -140,7 +197,8 @@ $img-width: 45%;
 
     &__title {
         text-decoration: none;
-        font-size: 22px;
+        @include fontSize(22px);
+        font-weight: bolder;
         color: $dark-blue;
         letter-spacing: 1.5;
 
@@ -236,10 +294,77 @@ $img-width: 45%;
             color: $light-blue;
         }
     }
+
+    &__sidebar {
+        @include for-phone-only {
+            width: 100%;
+            padding: 20px;
+        }
+        width: 25%;
+        padding: 40px 10px;
+    }
+
+    .sidebar {
+        &__top {
+            border: 1px solid $light-gray;
+            padding: 15px 20px;
+        }
+
+        &__title {
+            background-color: $light-yellow;
+            text-align: center;
+            padding: 10px 20px;
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+
+        &__posts {
+            @include reset-list;
+        }
+
+        &__list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 15px 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px dashed $light-gray;
+            }
+        }
+
+        &__img {
+            width: 40%;
+        }
+
+        &__details {
+            width: 50%;
+            padding-left: 10%;
+        }
+
+        &__post-title {
+            font-size: 14px;
+            color: $blue;
+            @extend %no-decoration;
+
+            &:hover {
+                @extend %u-decoration;
+            }
+        }
+
+        &__post-date {
+            font-size: 12px;
+            margin: 5px 0 0;
+        }
+    }
 }
 
 /// Aula 2 - Nesting and Parent Selector &
 .about {
+    @include for-phone-only {
+        width: 90%;
+    }
     width: 80%;
     margin: 0 auto 40px;
     font-family: 'Courier New', Courier, monospace;
@@ -252,6 +377,7 @@ $img-width: 45%;
 
     &__h1 {
         font-size: 22px;
+        font-weight: bolder;
         color: $dark-gray;
         letter-spacing: 1px;
         margin: 5px 0 10px 0;
@@ -294,6 +420,12 @@ $img-width: 45%;
         margin: 30px auto;
         text-align: center;
         font-size: 16px;
+        @include for-phone-only {
+            width: 90%;
+        }
+        @include for-tablet-only {
+            width: 80%;
+        }
     }
 
     &__split {
@@ -303,14 +435,20 @@ $img-width: 45%;
         align-items: center;
     }
 
-    &__img2 {
+    &__img-description {
         width: $img-width;
+        @include for-phone-only {
+            width: 80%;
+        }
     }
 
     &__txt {
-        
         /// Aula 2 - Interpolação:
         width: calc(100% - #{$img-width});
+        @include for-phone-only {
+            width: 90%;
+            text-align: center;
+        }
     }
 
     &__p {
@@ -318,3 +456,88 @@ $img-width: 45%;
         padding: 20px;
     }
 }
+
+.article {
+    @include for-phone-only {
+        width: 90%;
+    }
+    width: 80%;
+    margin: 0 auto 40px;
+    font-family: 'Courier New', Courier, monospace;
+
+    &__title {
+        background-color: $light-gray;
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 22px;
+        font-weight: bolder;
+        color: $dark-gray;
+        letter-spacing: 1px;
+        margin: 5px 0 10px 0;
+    }
+
+    .breadcrumb {
+        @include flx(justify-content, center);
+        align-items: center;
+
+        &__link {
+            font-size: 16px;
+            @extend %no-decoration;
+            color: $dark-blue;
+
+            &:hover {
+                @extend %u-decoration;
+                color: $blue;
+            }
+        }
+
+        &__img {
+            width: 10px;
+            margin: 8px;
+        }
+    }
+
+    &__img {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    &__details {
+        @include flx(justify-content, center);
+        align-items: center;
+
+    }
+
+    &__date {
+        margin: 0 10px;
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    &__tag {
+        font-size: 14px;
+        padding: 5px 7px;
+        color: $blue;
+        background: $light-yellow;
+        border: 1px solid $blue;
+        margin: 0 10px;
+    }
+
+    &__content {
+        text-align: justify;
+        font-weight: 100;
+        font-size: 16px;
+        color: $dark;
+        padding: 10px 20px;
+
+        p {
+            letter-spacing: 1px;
+            padding: 10px 0;
+        }
+    }
+}
+
+/// 3:33 min
