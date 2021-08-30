@@ -1,0 +1,187 @@
+/// Aula 3 - Import PARTIAL (_main.scss)
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
+
+    &__content {
+        @include for-phone-only {
+            width: 100%;
+        }
+        width: 70%;
+        padding: 40px 8px;
+    }
+
+    &__post {
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__title {
+        text-decoration: none;
+        @include fontSize(22px);
+        font-weight: bolder;
+        color: $dark-blue;
+        letter-spacing: 1.5;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__date {
+        margin: 0 10px;
+        font-size: 12px;
+        font-style: italic;
+    } 
+
+    &__tag {
+        font-size: 14px;
+        padding: 5px 7px;
+        color: $blue;
+        background: $light-yellow;
+        border: 1px solid $light-blue;
+        margin: 0 10px;
+    }
+
+    &__details {
+        border: 1px solid $light-gray;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__description {
+        padding: 40px 0 25px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+    }
+
+    &__btn {
+        text-decoration: none;
+        font-size: 16px;
+        letter-spacing: 1.5;
+        color: $blue;
+        background: $light-yellow;
+        padding: 10px 20px;
+        transition: .3s;
+
+        &:hover {
+            color: $light-yellow;
+            background: $blue;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $light-gray;
+        margin-top: 30px;
+    }
+
+    &__author {
+        width: 50%;
+        border-right: 1px solid $light-gray;
+    }
+
+    &__p {
+        font-size: 14px;
+        color: $dark-gray;
+        margin: 10px 0;
+    }
+
+    &__comments {
+        width: 50%;
+    }
+
+    &__a {
+        text-decoration: none;
+        font-size: 14px;
+        color: $dark-gray;
+        margin: 10px 0;
+
+        &:hover {
+            color: $light-blue;
+        }
+    }
+
+    &__sidebar {
+        @include for-phone-only {
+            width: 100%;
+            padding: 20px;
+        }
+        width: 25%;
+        padding: 40px 10px;
+    }
+
+    .sidebar {
+        &__top {
+            border: 1px solid $light-gray;
+            padding: 15px 20px;
+        }
+
+        &__title {
+            background-color: $light-yellow;
+            text-align: center;
+            padding: 10px 20px;
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+
+        &__posts {
+            @include reset-list;
+        }
+
+        &__list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 15px 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px dashed $light-gray;
+            }
+        }
+
+        &__img {
+            width: 40%;
+        }
+
+        &__details {
+            width: 50%;
+            padding-left: 10%;
+        }
+
+        &__post-title {
+            font-size: 14px;
+            color: $blue;
+            @extend %no-decoration;
+
+            &:hover {
+                @extend %u-decoration;
+            }
+        }
+
+        &__post-date {
+            font-size: 12px;
+            margin: 5px 0 0;
+        }
+    }
+}

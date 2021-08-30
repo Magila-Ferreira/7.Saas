@@ -1,0 +1,98 @@
+/// Aula 3 - Import PARTIAL (_about.scss)
+
+/// Aula 2 - Nesting and Parent Selector &
+.about {
+    @include for-phone-only {
+        width: 90%;
+    }
+    width: 80%;
+    margin: 0 auto 40px;
+    font-family: 'Courier New', Courier, monospace;
+
+    &__title {
+        background: $light-gray;
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 22px;
+        font-weight: bolder;
+        color: $dark-gray;
+        letter-spacing: 1px;
+        margin: 5px 0 10px 0;
+    }
+
+    .breadcrumb {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        &__link {
+            font-size: 16px;
+            text-decoration: none;
+            color: $dark-blue;
+
+            &:hover {
+                color: $blue;
+                text-decoration: underline;
+                text-decoration-color: $blue;
+                text-decoration-thickness: 3px;
+            }
+        }
+
+        &__img {
+            width: 10px;
+            margin: 8px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        font-weight: 100;
+        color: $dark-gray;
+        width: 70%;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 16px;
+        @include for-phone-only {
+            width: 90%;
+        }
+        @include for-tablet-only {
+            width: 80%;
+        }
+    }
+
+    &__split {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__img-description {
+        width: $img-width;
+        @include for-phone-only {
+            width: 80%;
+        }
+    }
+
+    &__txt {
+        /// Aula 2 - Interpolação:
+        width: calc(100% - #{$img-width});
+        @include for-phone-only {
+            width: 90%;
+            text-align: center;
+        }
+    }
+
+    &__p {
+        font-size: 14px;
+        padding: 20px;
+    }
+}
