@@ -82,4 +82,26 @@ $img-width: 45%;
     font-size: calculateRem($size);
 }
 
-@import 'header', 'main', 'footer', 'about', 'article';
+@import 'header', 'main', 'footer', 'about', 'article', 'collection';
+
+/// Aula 4 - Controle de fluxo e laços de repetição:
+
+// VARIÁVEIS
+$directions: top, right, bottom, left;
+$layout-margin-size: 10px;
+
+// CONTROLE DE FLUXO 
+@each $direction in $directions {
+    // ZERANDO A MARGIN
+    %no-margin-#{$direction} {margin-#{$direction}: 0;}
+    
+    // ATRIBUINDO UMA MARGIN PADRÃO - VARIÁVEL LAYOUT
+    %default-margin-#{$direction} {margin-#{$direction}: $layout-margin-size;}
+
+    // MARGINS CALCULADAS: DOUBLE AND HALF
+    %double-margin-#{$direction} {margin-#{$direction}: $layout-margin-size * 2;}
+
+    %half-margin-#{$direction} {margin-#{$direction}: $layout-margin-size / 2;}
+}
+
+

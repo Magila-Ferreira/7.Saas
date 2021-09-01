@@ -37,12 +37,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 10px;
-        margin-bottom: 20px;
+        @extend %default-margin-top, %double-margin-bottom;
     }
 
     &__date {
-        margin: 0 10px;
+        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
         font-size: 12px;
         font-style: italic;
     } 
@@ -53,7 +52,7 @@
         color: $blue;
         background: $light-yellow;
         border: 1px solid $light-blue;
-        margin: 0 10px;
+        @extend %no-margin-top, %no-margin-bottom,%default-margin-left, %default-margin-right;
     }
 
     &__details {
