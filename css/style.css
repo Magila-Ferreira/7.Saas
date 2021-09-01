@@ -542,12 +542,55 @@
   margin: 10px;
 }
 
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.contact__figure {
+  width: 40%;
+}
+.contact__img {
+  width: 100%;
+}
+.contact__info {
+  width: 40%;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  background: #F9F9F9;
+  padding: 50px 15px;
+}
+.contact__p-1 {
+  font-size: 2.5rem;
+  padding-top: 5px;
+}
+.contact__p-2 {
+  font-size: 1.25rem;
+  padding-top: 10px;
+}
+.contact__p-3 {
+  font-size: 0.8333333333rem;
+  padding-top: 15px;
+}
+.contact__p-4 {
+  font-size: 0.625rem;
+  padding-top: 20px;
+}
+
 .main__date, .main__tag, .article__date, .article__tag, .collection__date, .collection__tag {
   margin-top: 0;
 }
 
 .main__subtitle {
   margin-top: 10px;
+}
+
+.contact {
+  margin-top: 20px;
 }
 
 .article__h1 {
@@ -560,6 +603,10 @@
 
 .main__date, .main__tag, .article__date, .article__tag, .collection__date, .collection__tag {
   margin-right: 10px;
+}
+
+.contact__figure {
+  margin-right: 20px;
 }
 
 .main__date, .main__tag, .article__date, .article__tag, .collection__date, .collection__tag {
@@ -580,6 +627,10 @@
 
 .main__date, .main__tag, .article__date, .article__tag, .collection__date, .collection__tag {
   margin-left: 10px;
+}
+
+.contact__info {
+  margin-left: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
