@@ -52,6 +52,68 @@
 
         p {font-family: 'Courier New', Courier, monospace};
 
+/*              MANIPULANDO O SASS              */
+
+/// WIDTH:
+$img-width: 45%;
+
+/// PLACEHOLDER SELECTOR:
+%no-decoration { text-decoration: none; }
+%u-decoration { text-decoration: underline; }
+
+/// Aula 3 - Mixin
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+};
+
+@mixin flx($property, $jty-cnt) {
+    display: flex;
+    #{$property}: $jty-cnt;
+}
+
+/// Aula 3 - Media queries and Mixins
+@mixin for-phone-only {
+    @media (max-width: 767.98px) { @content; }
+};
+
+@mixin for-tablet-only {
+    @media (min-width: 768px) and (max-width: 1199.98px) { @content; } 
+};
+
+@mixin for-desktop-only {
+    @media (min-width: 1200px) { @content; }
+};
+
+/// Aula 3 - Function 
+@function calculateRem($size) {
+    @return $size / 16px * 1rem;
+}
+
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}
+
+/// Aula 4 - Controle de fluxo e laços de repetição:
+
+// VARIÁVEIS
+$directions: top, right, bottom, left;
+$layout-margin-size: 10px;
+
+// CONTROLE DE FLUXO 
+@each $direction in $directions {
+    // ZERANDO A MARGIN
+    %no-margin-#{$direction} {margin-#{$direction}: 0;}
+    
+    // ATRIBUINDO UMA MARGIN PADRÃO - VARIÁVEL LAYOUT
+    %default-margin-#{$direction} {margin-#{$direction}: $layout-margin-size;}
+
+    // MARGINS CALCULADAS: DOUBLE AND HALF
+    %double-margin-#{$direction} {margin-#{$direction}: $layout-margin-size * 2;}
+
+    %half-margin-#{$direction} {margin-#{$direction}: $layout-margin-size / 2;}
+}
         /* Instalação do Saas:
         
         Basta rodar o comando abaixo no Terminal
